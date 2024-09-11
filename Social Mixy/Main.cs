@@ -71,9 +71,27 @@ namespace Social_Mixy
                         registerId++;
                         // create a new person object to store in the list of registered people
                         Person p = new Person(line, registerId);
+                        // adds this person to the list view for easy filtering
+                        addToListview(p);
                     }
                 }
             }
+        }
+
+        public void addToListview(Person p)
+        {
+            // creates an item object that can be added to a lisat view
+            ListViewItem item = new ListViewItem(p.numRegistration.ToString());
+            // adds the persons name to this item
+            item.SubItems.Add(p.firstName);
+            item.SubItems.Add(p.lastName);
+            item.SubItems.Add(p.email);
+            item.SubItems.Add(p.campus);
+            item.SubItems.Add(p.isRideRequiredHamilton.ToString());
+            // stores the full person object as a tag for later reference to the whole object
+            item.Tag = p;
+            listviewRegistrants.Items.Add(item);
+
         }
     }
 }
