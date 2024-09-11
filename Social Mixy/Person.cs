@@ -30,7 +30,7 @@ namespace Social_Mixy
         // the student id of this person
         public int studentId;
         // the level of study of this person (i.e., 1st year, 2nd year, masters etc.,)
-        string studyLevel;
+        public string studyLevel;
         // the first major of this person
         public string firstMajor;
         // the email address of this person
@@ -81,20 +81,20 @@ namespace Social_Mixy
 
         public void printAttributes()
         {
-            StringBuilder str = new StringBuilder(numRegistration.ToString() + "\n");
-            str.AppendLine("Registration Date: " + date);
+            StringBuilder str = new StringBuilder($"Reigstration No: {numRegistration.ToString()} \n");
+            str.AppendLine("First Name: " + firstName);
+            str.AppendLine("Last Name: " + lastName);
+            str.AppendLine("Student Id: " + (studentId == -1 ? "N/A" : studentId.ToString()));
+            str.AppendLine("Email: " + email);
             str.AppendLine("Campus: " + campus);
+            str.AppendLine("Level of study: " + studyLevel);
+            str.AppendLine("First Major: " + firstMajor);
             str.AppendLine("Shuttle required? " + isRideRequiredHamilton);
             str.AppendLine("Ride home required? " + isRideRequiredHome);
             str.AppendLine("Carpool Friendly? " + isCarpoolFriendly);
             str.AppendLine("Approved disclaimer? " + isAcceptingDisclaimer);
             str.AppendLine("Passenger limit: " + passengerLimit);
-            str.AppendLine("First Name: " + firstName);
-            str.AppendLine("Last Name: " + lastName);
-            str.AppendLine("Student Id: " + (studentId == -1 ? "N/A" : studentId.ToString()));
-            str.AppendLine("Level of study: " + studyLevel);
-            str.AppendLine("First Major: " + firstMajor);
-            str.AppendLine("Email: " + email);
+            str.AppendLine("Registration Date: " + date);
             str.Append("");
 
             Console.WriteLine(str);
