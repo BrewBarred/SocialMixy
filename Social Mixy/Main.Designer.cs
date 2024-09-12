@@ -47,13 +47,13 @@
             this.panelStats = new System.Windows.Forms.Panel();
             this.buttonPrintSelected = new System.Windows.Forms.Button();
             this.buttonFilterClear = new System.Windows.Forms.Button();
-            this.textBox3rdYears = new System.Windows.Forms.TextBox();
+            this.textBoxStudents3rdYear = new System.Windows.Forms.TextBox();
             this.buttonFilterShuttles = new System.Windows.Forms.Button();
             this.label3rdYears = new System.Windows.Forms.Label();
             this.buttonFilterDiets = new System.Windows.Forms.Button();
-            this.textBox2ndYears = new System.Windows.Forms.TextBox();
+            this.textBoxStudents2ndYear = new System.Windows.Forms.TextBox();
             this.labelSecondYears = new System.Windows.Forms.Label();
-            this.textBox1stYears = new System.Windows.Forms.TextBox();
+            this.textBoxStudents1stYear = new System.Windows.Forms.TextBox();
             this.label1stYears = new System.Windows.Forms.Label();
             this.textBoxShuttlesHome = new System.Windows.Forms.TextBox();
             this.labelShuttlesHome = new System.Windows.Forms.Label();
@@ -198,14 +198,14 @@
             this.panelStats.Controls.Add(this.buttonPrintSelected);
             this.panelStats.Controls.Add(this.buttonStartDraw);
             this.panelStats.Controls.Add(this.buttonFilterClear);
-            this.panelStats.Controls.Add(this.textBox3rdYears);
+            this.panelStats.Controls.Add(this.textBoxStudents3rdYear);
             this.panelStats.Controls.Add(this.buttonCopyMailingList);
             this.panelStats.Controls.Add(this.buttonFilterShuttles);
             this.panelStats.Controls.Add(this.label3rdYears);
             this.panelStats.Controls.Add(this.buttonFilterDiets);
-            this.panelStats.Controls.Add(this.textBox2ndYears);
+            this.panelStats.Controls.Add(this.textBoxStudents2ndYear);
             this.panelStats.Controls.Add(this.labelSecondYears);
-            this.panelStats.Controls.Add(this.textBox1stYears);
+            this.panelStats.Controls.Add(this.textBoxStudents1stYear);
             this.panelStats.Controls.Add(this.label1stYears);
             this.panelStats.Controls.Add(this.textBoxShuttlesHome);
             this.panelStats.Controls.Add(this.labelShuttlesHome);
@@ -250,16 +250,16 @@
             this.buttonFilterClear.UseVisualStyleBackColor = true;
             this.buttonFilterClear.Click += new System.EventHandler(this.buttonFilterClear_Click);
             // 
-            // textBox3rdYears
+            // textBoxStudents3rdYear
             // 
-            this.textBox3rdYears.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.textBox3rdYears.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox3rdYears.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.textBox3rdYears.Location = new System.Drawing.Point(415, 118);
-            this.textBox3rdYears.Name = "textBox3rdYears";
-            this.textBox3rdYears.ReadOnly = true;
-            this.textBox3rdYears.Size = new System.Drawing.Size(125, 20);
-            this.textBox3rdYears.TabIndex = 21;
+            this.textBoxStudents3rdYear.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.textBoxStudents3rdYear.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxStudents3rdYear.ForeColor = System.Drawing.Color.Brown;
+            this.textBoxStudents3rdYear.Location = new System.Drawing.Point(415, 118);
+            this.textBoxStudents3rdYear.Name = "textBoxStudents3rdYear";
+            this.textBoxStudents3rdYear.ReadOnly = true;
+            this.textBoxStudents3rdYear.Size = new System.Drawing.Size(125, 20);
+            this.textBoxStudents3rdYear.TabIndex = 21;
             // 
             // buttonFilterShuttles
             // 
@@ -293,16 +293,16 @@
             this.buttonFilterDiets.UseVisualStyleBackColor = true;
             this.buttonFilterDiets.Click += new System.EventHandler(this.buttonFilterDiets_Click);
             // 
-            // textBox2ndYears
+            // textBoxStudents2ndYear
             // 
-            this.textBox2ndYears.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.textBox2ndYears.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox2ndYears.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.textBox2ndYears.Location = new System.Drawing.Point(415, 95);
-            this.textBox2ndYears.Name = "textBox2ndYears";
-            this.textBox2ndYears.ReadOnly = true;
-            this.textBox2ndYears.Size = new System.Drawing.Size(125, 20);
-            this.textBox2ndYears.TabIndex = 19;
+            this.textBoxStudents2ndYear.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.textBoxStudents2ndYear.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxStudents2ndYear.ForeColor = System.Drawing.Color.Brown;
+            this.textBoxStudents2ndYear.Location = new System.Drawing.Point(415, 95);
+            this.textBoxStudents2ndYear.Name = "textBoxStudents2ndYear";
+            this.textBoxStudents2ndYear.ReadOnly = true;
+            this.textBoxStudents2ndYear.Size = new System.Drawing.Size(125, 20);
+            this.textBoxStudents2ndYear.TabIndex = 19;
             // 
             // labelSecondYears
             // 
@@ -314,16 +314,16 @@
             this.labelSecondYears.TabIndex = 18;
             this.labelSecondYears.Text = "Total 2nd Years:";
             // 
-            // textBox1stYears
+            // textBoxStudents1stYear
             // 
-            this.textBox1stYears.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.textBox1stYears.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1stYears.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.textBox1stYears.Location = new System.Drawing.Point(415, 72);
-            this.textBox1stYears.Name = "textBox1stYears";
-            this.textBox1stYears.ReadOnly = true;
-            this.textBox1stYears.Size = new System.Drawing.Size(125, 20);
-            this.textBox1stYears.TabIndex = 17;
+            this.textBoxStudents1stYear.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.textBoxStudents1stYear.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxStudents1stYear.ForeColor = System.Drawing.Color.Brown;
+            this.textBoxStudents1stYear.Location = new System.Drawing.Point(415, 72);
+            this.textBoxStudents1stYear.Name = "textBoxStudents1stYear";
+            this.textBoxStudents1stYear.ReadOnly = true;
+            this.textBoxStudents1stYear.Size = new System.Drawing.Size(125, 20);
+            this.textBoxStudents1stYear.TabIndex = 17;
             // 
             // label1stYears
             // 
@@ -339,7 +339,7 @@
             // 
             this.textBoxShuttlesHome.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.textBoxShuttlesHome.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxShuttlesHome.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.textBoxShuttlesHome.ForeColor = System.Drawing.Color.Brown;
             this.textBoxShuttlesHome.Location = new System.Drawing.Point(710, 95);
             this.textBoxShuttlesHome.Name = "textBoxShuttlesHome";
             this.textBoxShuttlesHome.ReadOnly = true;
@@ -360,7 +360,7 @@
             // 
             this.textBoxAlumni.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.textBoxAlumni.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxAlumni.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.textBoxAlumni.ForeColor = System.Drawing.Color.Brown;
             this.textBoxAlumni.Location = new System.Drawing.Point(151, 121);
             this.textBoxAlumni.Name = "textBoxAlumni";
             this.textBoxAlumni.ReadOnly = true;
@@ -381,7 +381,7 @@
             // 
             this.textBoxStaff.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.textBoxStaff.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxStaff.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.textBoxStaff.ForeColor = System.Drawing.Color.Brown;
             this.textBoxStaff.Location = new System.Drawing.Point(151, 98);
             this.textBoxStaff.Name = "textBoxStaff";
             this.textBoxStaff.ReadOnly = true;
@@ -402,7 +402,7 @@
             // 
             this.textBoxStudents.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.textBoxStudents.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxStudents.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.textBoxStudents.ForeColor = System.Drawing.Color.Brown;
             this.textBoxStudents.Location = new System.Drawing.Point(151, 75);
             this.textBoxStudents.Name = "textBoxStudents";
             this.textBoxStudents.ReadOnly = true;
@@ -423,7 +423,7 @@
             // 
             this.textBoxShuttlesCampus.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.textBoxShuttlesCampus.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxShuttlesCampus.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.textBoxShuttlesCampus.ForeColor = System.Drawing.Color.Brown;
             this.textBoxShuttlesCampus.Location = new System.Drawing.Point(710, 72);
             this.textBoxShuttlesCampus.Name = "textBoxShuttlesCampus";
             this.textBoxShuttlesCampus.ReadOnly = true;
@@ -444,7 +444,7 @@
             // 
             this.textBoxHamilton.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.textBoxHamilton.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxHamilton.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.textBoxHamilton.ForeColor = System.Drawing.Color.Brown;
             this.textBoxHamilton.Location = new System.Drawing.Point(984, 70);
             this.textBoxHamilton.Name = "textBoxHamilton";
             this.textBoxHamilton.ReadOnly = true;
@@ -455,7 +455,7 @@
             // 
             this.textBoxTauranga.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.textBoxTauranga.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxTauranga.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.textBoxTauranga.ForeColor = System.Drawing.Color.Brown;
             this.textBoxTauranga.Location = new System.Drawing.Point(984, 93);
             this.textBoxTauranga.Name = "textBoxTauranga";
             this.textBoxTauranga.ReadOnly = true;
@@ -466,7 +466,7 @@
             // 
             this.textBoxTotal.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.textBoxTotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxTotal.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.textBoxTotal.ForeColor = System.Drawing.Color.Brown;
             this.textBoxTotal.Location = new System.Drawing.Point(984, 116);
             this.textBoxTotal.Name = "textBoxTotal";
             this.textBoxTotal.ReadOnly = true;
@@ -567,11 +567,11 @@
         private System.Windows.Forms.Label labelShuttlesHome;
         private System.Windows.Forms.Button buttonFilterShuttles;
         private System.Windows.Forms.Button buttonFilterClear;
-        private System.Windows.Forms.TextBox textBox3rdYears;
+        private System.Windows.Forms.TextBox textBoxStudents3rdYear;
         private System.Windows.Forms.Label label3rdYears;
-        private System.Windows.Forms.TextBox textBox2ndYears;
+        private System.Windows.Forms.TextBox textBoxStudents2ndYear;
         private System.Windows.Forms.Label labelSecondYears;
-        private System.Windows.Forms.TextBox textBox1stYears;
+        private System.Windows.Forms.TextBox textBoxStudents1stYear;
         private System.Windows.Forms.Label label1stYears;
         private System.Windows.Forms.Button buttonPrintSelected;
     }

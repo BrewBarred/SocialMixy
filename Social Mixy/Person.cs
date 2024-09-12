@@ -67,6 +67,7 @@ namespace Social_Mixy
             isCarpoolFriendly = data[4].Contains("Yeah");
             isAcceptingDisclaimer = data[5].Contains("Yeah");
             passengerLimit = data[6] == "" ? "N/A" : data[6];
+            associationType = data[7];
             firstName = data[8] == "" ? (data[14] == "" ? data[20] : data[14]) : data[8];
             lastName = data[9] == "" ? (data[15] == "" ? data[21] : data[15]) : data[9];
             studentId = data[10] != "" ? int.Parse(data[10]) : -1;

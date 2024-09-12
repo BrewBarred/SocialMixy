@@ -9,12 +9,62 @@ namespace Social_Mixy
     {
         // class scope variables
 
-        // form to handle prize draw
+        /// <summary>
+        /// form to handle prize draw
+        /// </summary>
         FormDraw formDraw;
-        // stores a list of everyone that has pre-registered to the social mixy
+        /// <summary>
+        /// stores a list of everyone that has pre-registered to the social mixy
+        /// </summary>
         List<Person> listRegistrants = new List<Person>();
-        // stores the number of pre-registrants to the social mixer
+        /// <summary>
+        /// stores the number of pre-registrants to the social mixer
+        /// </summary>
         int numRegistrants;
+        /// <summary>
+        /// the total number of pre-registered students
+        /// </summary>
+        int totalStudents;
+        /// <summary>
+        /// the total number of 1st year students
+        /// </summary>
+        int totalStudents1stYear;
+        /// <summary>
+        /// the total number of 2nd year students
+        /// </summary>
+        int totalStudents2ndYear;
+        /// <summary>
+        /// the total number of 3rd year students
+        /// </summary>
+        int totalStudents3rdYear;
+        /// <summary>
+        /// the total number of staff members
+        /// </summary>
+        int totalStaff;
+        /// <summary>
+        /// the total number of alumni
+        /// </summary>
+        int totalAlumni;
+        /// <summary>
+        /// the total number of people shuttling from TGA and back
+        /// </summary>
+        int totalShuttlesCampus;
+        /// <summary>
+        /// the total number of people needing a shuttle home from TGA
+        /// </summary>
+        int totalShuttlesHome;
+        /// <summary>
+        /// the total number of hamilton-based students
+        /// </summary>
+        int totalStudentsHamilton;
+        /// <summary>
+        /// the total number of tauranga-based students
+        /// </summary>
+        int totalStudentsTauranga;
+        /// <summary>
+        /// the total number of people that pre-registered to the social mixy
+        /// </summary>
+        int totalRegistrants;
 
         public Main()
         {
@@ -85,6 +135,7 @@ namespace Social_Mixy
 
                 // adds this person to the list view for easy filtering
                 displayAll();
+                calculateSummary();
             }
         }
 
@@ -194,6 +245,114 @@ namespace Social_Mixy
                 // displays each numRegistrants in the list
                 displayRegistrant(p);
             }
+        }
+
+        /// <summary>
+        /// Updates all textboxes to match the newly processed files data
+        /// </summary>
+        private void calculateSummary()
+        {
+            // clears all list view items, summary boxes and summary values
+            //clearAll();
+
+            foreach (Person p in listRegistrants)
+            {
+                switch (p.associationType.ToLower())
+                {
+                    case "student":
+                        totalStudents++;
+                        break;
+
+                    case "staff member":
+                        totalStaff++;
+                        break;
+
+                    case "alumni":
+                        totalAlumni++;
+                        break;
+                }
+
+                if (p.studyLevel != null)
+                {
+                    switch (p.studyLevel.ToLower())
+                    {
+                        case "1st year":
+                            totalStudents1stYear++;
+                            break;
+
+                        case "2nd year":
+                            totalStudents2ndYear++;
+                            break;
+
+                        case "3rd year":
+                            totalStudents3rdYear++;
+                            break;
+
+                            // insert other years here if time allows
+                    }
+                }
+
+                if (p.isRideRequiredHamilton)
+                    totalShuttlesCampus++;
+
+                if (p.isRideRequiredHome)
+                    totalShuttlesHome++;
+
+                switch (p.campus.ToLower())
+                {
+                    case "hamilton":
+                        totalStudentsHamilton++;
+                        break;
+
+                    case "tauranga":
+                        totalStudentsTauranga++;
+                        break;
+                }
+
+                totalRegistrants++;
+            }
+
+            updateSummary();
+
+        }
+
+        private void clearAll()
+        {
+            // clears all textboxes in the summary panel
+            foreach (Control c in panelStats.Controls)
+                if (c is TextBox tB)
+                    tB.Clear();
+
+            // reset all field values 
+            totalStudents = 0;
+            totalStudents1stYear = 0;
+            totalStudents2ndYear = 0;
+            totalStudents3rdYear = 0;
+            totalStaff = 0;
+            totalAlumni = 0;
+            totalShuttlesCampus = 0;
+            totalShuttlesHome = 0;
+            totalStudentsHamilton = 0;
+            totalStudentsTauranga = 0;
+            totalRegistrants = 0;
+
+            updateSummary();
+        }
+
+        private void updateSummary()
+        {
+            Console.WriteLine($"Students: {totalStudents}, 1st year: {totalStudents1stYear.ToString()}");
+            textBoxStudents.Text = totalStudents.ToString();
+            textBoxStudents1stYear.Text = totalStudents1stYear.ToString();
+            textBoxStudents2ndYear.Text = totalStudents2ndYear.ToString();
+            textBoxStudents3rdYear.Text = totalStudents3rdYear.ToString();
+            textBoxStaff.Text = totalStaff.ToString();
+            textBoxAlumni.Text = totalAlumni.ToString();
+            textBoxShuttlesCampus.Text = totalShuttlesCampus.ToString();
+            textBoxShuttlesHome.Text = totalShuttlesHome.ToString();
+            textBoxHamilton.Text = totalStudentsHamilton.ToString();
+            textBoxTauranga.Text = totalStudentsTauranga.ToString();
+            textBoxTotal.Text = totalRegistrants.ToString();
         }
 
         /// <summary>
