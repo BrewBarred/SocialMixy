@@ -84,7 +84,7 @@ namespace Social_Mixy
                 }
 
                 // adds this person to the list view for easy filtering
-                updateListview();
+                displayAll();
             }
         }
 
@@ -97,27 +97,7 @@ namespace Social_Mixy
             listRegistrants.Add(p);
         }
 
-        public void updateListview()
-        {
-            // ensure data is loaded before continuing
-            if (listRegistrants is null || listRegistrants.Count < 1)
-            {
-                Console.WriteLine("Error updating list view, no data was found!");
-                return;
-            }
-
-            // clear any existing data in the listview
-            listViewRegistrants.Items.Clear();
-
-            // iterates through the list of registrants and adds them to the list view
-            foreach (Person p in listRegistrants)
-            {
-                // displays each numRegistrants in the list
-                displayRegistrants(p);
-            }
-        }
-
-        public void displayRegistrants(Person p)
+        public void displayRegistrant(Person p)
         {
             // creates an item object that can be added to a list view using their registration order number as an id
             ListViewItem item = new ListViewItem(p.numRegistration.ToString());
@@ -191,6 +171,80 @@ namespace Social_Mixy
 
             // creates and displays a new prize form to display prize winners
             formDraw = new FormDraw(listRegistrants);
+        }
+
+        /// <summary>
+        /// Displays all registrants in the list
+        /// </summary>
+        public void displayAll()
+        {
+            // ensure data is loaded before continuing
+            if (listRegistrants is null || listRegistrants.Count < 1)
+            {
+                Console.WriteLine("Error updating list view, no data was found!");
+                return;
+            }
+
+            // clear any existing data in the listview
+            listViewRegistrants.Items.Clear();
+
+            // iterates through the list of registrants and adds them to the list view
+            foreach (Person p in listRegistrants)
+            {
+                // displays each numRegistrants in the list
+                displayRegistrant(p);
+            }
+        }
+
+        /// <summary>
+        /// Only display the people with dietary preferences
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void buttonFilterDiets_Click(object sender, EventArgs e)
+        {
+            listViewClear();
+
+            // loop through the lsit of registrants and only display those with dietary preferences
+            foreach (Person p in listRegistrants)
+                if (p.hasDietaryPrefs)
+                    displayRegistrant(p);
+        }
+
+        private void buttonFilterShuttles_Click(object sender, EventArgs e)
+        {
+            listViewClear();
+
+            // loop through the lsit of registrants and only display those with dietary preferences
+            foreach (Person p in listRegistrants)
+                if (p.isRideRequiredHamilton)
+                    displayRegistrant(p);
+        }
+
+        private void listViewClear()
+        {
+            // clears the list view
+            listViewRegistrants.Items.Clear();
+        }
+
+        private void buttonFilterClear_Click(object sender, EventArgs e)
+        {
+            // clears any existing data from the list view and relaods it without any filters
+            listViewClear();
+            displayAll();
+        }
+
+        private void buttonPrintSelected_Click(object sender, EventArgs e)
+        {
+            if (listViewRegistrants.SelectedItems.Count > 0)
+            {
+                // Get the selected item
+                ListViewItem selectedItem = listViewRegistrants.SelectedItems[0];
+                // Extract the Person object from the Tag property
+                Person person = (Person)selectedItem.Tag;
+                person.printAttributes();
+
+            }
         }
     }
 }

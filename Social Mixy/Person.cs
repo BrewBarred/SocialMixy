@@ -45,6 +45,8 @@ namespace Social_Mixy
         public string dietaryPrefs;
         // true if this person would like to receive an update via email
         public bool isEmailable;
+        // true if this person completed the bingo activity, else false
+        public bool isBingoWinner;
         // extra notes provided by this person
         public string notes;
 
@@ -76,6 +78,7 @@ namespace Social_Mixy
             hasDietaryPrefs = data[25] == "Yes" ? true : false;
             dietaryPrefs = hasDietaryPrefs == false ? "N/A" : data[26];
             isEmailable = data[27].Contains("Yes");
+            isBingoWinner = false;
             notes = data[28];
         }
 
@@ -96,6 +99,7 @@ namespace Social_Mixy
             str.AppendLine("Passenger limit: " + passengerLimit);
             str.AppendLine("Registration Date: " + date);
             str.Append("");
+            str.Append("/////////////////////////////////////////");
 
             Console.WriteLine(str);
         }

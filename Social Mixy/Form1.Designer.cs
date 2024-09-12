@@ -34,7 +34,7 @@
             // labelDisplay
             // 
             this.labelDisplay.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelDisplay.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDisplay.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelDisplay.ForeColor = System.Drawing.SystemColors.Control;
             this.labelDisplay.Location = new System.Drawing.Point(0, 0);
             this.labelDisplay.Name = "labelDisplay";
@@ -42,7 +42,6 @@
             this.labelDisplay.TabIndex = 0;
             this.labelDisplay.Text = "Drawing a random winner... \r\n\r\n(Drum roll please...)";
             this.labelDisplay.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.labelDisplay.MouseClick += new System.Windows.Forms.MouseEventHandler(this.labelDisplay_MouseClick);
             // 
             // FormDraw
             // 
@@ -52,7 +51,10 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.labelDisplay);
             this.Name = "FormDraw";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Prize Draw";
+            this.TopMost = true;
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormDraw_KeyDown);
             this.ResumeLayout(false);
 
